@@ -17,7 +17,7 @@ function calculatePrice(product, quantity) {
             result = "Invalid";
             break;
     }
-
+    
     console.log(result.toFixed(2));
 }
 
