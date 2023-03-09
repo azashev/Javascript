@@ -23,7 +23,6 @@ function calculatePrice(product, quantity) {
 
 calculatePrice("water", 5);
 calculatePrice("coffee", 2);
-calculatePrice("neshto", 1);
 
 
 // Task description
