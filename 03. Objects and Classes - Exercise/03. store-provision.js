@@ -1,6 +1,5 @@
 function storeProvision(firstArr, secondArr) {
     let store = {};
-    let combined = [...firstArr, ...secondArr];
     let currentProduct = '';
     for (let i = 0; i < firstArr.length; i++) {
         if (i % 2 === 0) {
