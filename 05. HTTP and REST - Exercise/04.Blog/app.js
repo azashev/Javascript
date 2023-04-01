@@ -30,7 +30,7 @@ function attachEvents() {
                 
             });
         } catch (error) {
-            // TO DO
+            alert(error);
         }
     }
 
@@ -57,7 +57,7 @@ function attachEvents() {
                 postComments.appendChild(li);
             });
         } catch (error) {
-            
+            alert(error);
         }
     }
 }
