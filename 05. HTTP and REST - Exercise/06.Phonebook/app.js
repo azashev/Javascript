@@ -54,7 +54,7 @@ function attachEvents() {
             const phone = phoneInput.value;
             const httpHeaders = {
                 method: 'POST',
-                headers: { 'Content-type': 'application.json' },
+                headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify({
                     'person': person,
                     'phone': phone
