@@ -24,21 +24,30 @@ function attachEvents() {
     }
 
     async function send() {
-        const authorInput = document.querySelector('input[name="author"]');
-        const msgInput = document.querySelector('input[name="content"]');
-        
-        const postData = {
-            author: authorInput.value,
-            content: msgInput.value
+        try {
+            const authorInput = document.querySelector('input[name="author"]');
+            const msgInput = document.querySelector('input[name="content"]');
+            
+            const postData = {
+                author: authorInput.value,
+                content: msgInput.value
+            }
+            const response = await fetch(BASE_URL, {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify(postData)
+            });
+
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            authorInput.value = '';
+            msgInput.value = '';
+            getComments();
+        } catch (error) {
+            textArea.value = 'Error';
         }
-        const response = await fetch(BASE_URL, {
-            method: 'POST',
-            headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify(postData)
-        });
-        authorInput.value = '';
-        msgInput.value = '';
-        getComments();
     }
 }
 
